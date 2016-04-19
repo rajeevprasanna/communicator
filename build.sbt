@@ -4,4 +4,13 @@ version := "1.0"
 
 scalaVersion := "2.11.8"
 
-libraryDependencies += "com.typesafe.akka" % "akka-actor_2.11" % "2.4.4"
+libraryDependencies ++= {
+  val akkaHttpVersion = "1.0-RC4"
+
+  Seq(
+    "com.typesafe.akka" %% "akka-stream-experimental" % akkaHttpVersion,
+    "com.typesafe.akka" %% "akka-http-core-experimental" % akkaHttpVersion,
+    "com.typesafe.akka" %% "akka-http-experimental" % akkaHttpVersion,
+    "org.java-websocket" % "Java-WebSocket" % "1.3.0"
+  )
+}
